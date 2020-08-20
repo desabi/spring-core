@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="ConductorBean" class="com.abi.bean.Conductor">
+		<property name="nombre" value="Abi"></property>
+		<property name="telefono" value="7571251798"></property>
+	</bean>
+	
+	
+	<bean id="TaxiBean" class="com.abi.bean.Taxi" autowire="constructor">
+	
+		<!-- Se tiene que espeficicar el tipo de datos -->
+		<constructor-arg type="int" value="56"></constructor-arg>
+		
+		<!--  -->
+		<!-- Spring hace el enlace automatico conforme al argumento pasado en el constructor -->
+		<!-- El primer argumento es un numero, es el dato especificado arriba -->
+		<!-- El segundo argumento es un objeto de tipo conductor -->
+		<!-- Lo podemos indicar con la linea de abajo -->
+		
+		<!-- <constructor-arg ref="ConductorBean"></constructor-arg> -->
+		
+		<!-- O la podemos omitir, siempre y cuando se agregue autowire="constructor" -->
+		<!-- Al momento de definir el bean TaxiBean -->
+		
+	</bean>
+</beans>

@@ -1,0 +1,65 @@
+
+Fuente: 
+https://www.youtube.com/watch?v=NL0nxFwTRws&t=588s
+
+1. Crear el proyecto de tipo maven, forma 1
+
+2. Configurar el archivo pom.xml
+
+	- agregar la dependencia de spring-context
+	
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.1.5.RELEASE</version>
+		</dependency>
+
+	</dependencies>
+
+3. Crear el paquete com.abi.beans
+	- Crear la clase Saludo
+	
+4A. Crear el beans.xml en src/main/resources
+
+	* La version 4 de STS no trae la opcion para crear "Spring Bean Configuration File"
+	
+	* Solucion 1: copiar un archivo beans.xml generado con la version 3 de STS
+	
+	* Solucion 2: instalar un complemento: Spring IDE Roo Support
+	
+	Fuente: 
+	https://stackoverflow.com/questions/36369958/how-to-add-bean-configuration-file-in-an-eclipse-based-spring-project
+	
+	a) Help > Eclipse market
+	b) Type spring and search
+	c) Find Spring IDE Roo Support and click install
+	d) Accept terms and click finish
+	e) Restart Eclipse
+	f) File > New > Others > Spring > Spring Bean configuration file
+	
+	* Solucion 3: instalar el complemento STS 3 
+	
+4B. Crear el archivo beans.xml en src/main/resources
+
+	<bean id="SaludoBean" class="com.abi.beans.Saludo">
+		<property name="mensaje" value="Bienvenido a Spring"></property>
+	</bean>	
+	
+	- id="SaludoBean" es el nombre con el que Spring identifica al bean de la clase Saludo
+	- class = "com.abi.beans.Saludo" es la clase a la que Spring va a llamar para obtener la informacion
+	- name="mensaje" es el atributo que especificamos en la clase Saludo
+	- value="Bienvenido a Spring" es el valor que se le asigna al atributo mensaje, lo asigna llamando
+	  al metodo set
+	
+	* Lo anterior es el equivalente a:
+		
+		Saludo saludo = new Saludo();
+		
+		saludo.setMensaje("Bienvenido a Spring");
+		
+		System.out.println(saludo.getMensaje());
+	  
+5. Crear el main
+	-	  

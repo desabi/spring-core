@@ -1,0 +1,21 @@
+
+1. Crear el proyecto de tipo maven
+
+2. Agregar la dependencia spring-context al pom.xml
+
+3. Crear el paquete com.abi.bean
+	- Crear la clase Usuario
+
+4. Crear el paquete com.abi.config
+	- Crear la clase AppConfig
+	- Agregar la anotacion @Configurarion antes del nombre
+	- Crear un metodo que retorne un usuario y agregarle
+	  la anotacion @Bean
+
+5. Crear la clase Main en com.abi.main
+	- Para obtener el bean ahora llamaremos a la clase AppConfig
+	- Se utiliza la clase AnnotationConfigApplicationContext
+	
+	AnnotationConfigApplicationContext contexto = new AnnotationConfigApplicationContext(AppConfig.class);
+		
+	Usuario usuario = contexto.getBean("getUsuario", Usuario.class);

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Con lo siguiente, Spring se encargara de crea los nuevos beans -->
+	<!-- individuo y direccion con los datos que se le indican -->
+	
+	<bean id="IndividuoBean" class="com.abi.bean.Individuo">
+	
+		<!-- Las propiedades simples se especifican de manera directa -->
+		<property name="nombre" value="Abi"></property>
+		<property name="edad" value="31"></property>
+	
+		<!-- Setter inyection -->
+		<!-- Las propiedades de tipo objeto se especifican de la manera siguiente -->
+		<!-- La direccion es un objeto y a parte tiene datos simples -->
+				
+		<property name="direccion">
+			<bean class="com.abi.bean.Direccion">
+				<property name="ciudad" value="Tlapa"></property>
+				<property name="colonia" value="Tepeyac"></property>
+			</bean>
+		</property>
+		
+	</bean>
+</beans>

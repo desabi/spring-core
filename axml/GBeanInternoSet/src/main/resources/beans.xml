@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Este bean sera utilizado en la parte de abajo -->
+	<bean id="PropietarioBean" class="com.abi.bean.Propietario">
+		<property name="nombre" value="Abi"></property>
+		<property name="telefono" value="7571251798"></property>
+	</bean>
+
+	<bean id="CuentaBean" class="com.abi.bean.Cuenta">
+	
+		<!-- Atributo simple inyectado via set -->
+		<property name="banco" value="HSBC"></property>
+		
+		<!-- Atributo de tipo objeto inyectado via set -->
+		<!-- Aqui se llama al bean que esta arriba, PropietarioBean -->
+		<property name="propietario" ref="PropietarioBean"></property>
+		
+		<!-- Atributo simple inyectado via set-->
+		<property name="saldo" value="3999"></property>
+		
+	</bean>
+	
+</beans>

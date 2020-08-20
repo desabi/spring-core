@@ -1,0 +1,35 @@
+
+Fuente: 2017_Pro.Spring.5
+Capitulo 3, pagina 55
+
+1. Crear proyecto de tipo maven
+
+2. En el archivo pom.xml, agregar la dependencia spring-context
+
+3 Crear el paquete com.abi.bean y crear las 3 clases: Producto, Bateria y Disco
+	- A todos se le agrega un constructor vacio, porque despues en el main se utilizan
+	  los metodos set.
+	- En el proyecto anterior, BTienda, no tenian constructor vacio.
+	
+	- Producto: clase abstracta
+	- Bateria: clase concreta, agregar anotacion @Component
+	- Disco: clase concreta, agregar anotacion @Componen
+
+4 Crear el paquete com.abi.config y crear el archivo AppConfig
+	- se le agrega:
+		@ComponentScan(basePackages = {"com.abi"})
+		@Configuration
+		
+	- Se le quita @Bean y los metodos para obtener los objetos.
+	
+	- ¿Entonces como obtiene Spring los beans?
+	- La anotacion @Component en las clases Bateria y Disco 
+	  hace que Spring obtenga los bean
+	
+	- ¿Y como se establecen los datos de los beans si ya no 
+	   Existen los metodos con la anotacion @Bean?
+	- Los datos de los beans se establecen en el Main
+	
+5. Crear el paquete com.abi.main
+	- crear la clase Main, obtener los beans y establecerles datos.
+	

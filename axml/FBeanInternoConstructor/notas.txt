@@ -1,0 +1,12 @@
+
+1. Crear el proyecto de tipo maven
+
+2. Agregar la dependencia spring-context en el archivo pom.xml
+
+3. Crear el paquete com.abi.bean
+	- Crear la clase Conductor
+	- Crear la clase Taxi
+	
+4. Crear el archivo beans.xml en src/main/resources
+
+5. Crear el main

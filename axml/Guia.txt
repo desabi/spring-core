@@ -1,0 +1,19 @@
+
+*inyeccion setter datos simples
+
+*inyeccion constructor datos simples
+<constructor-arg type="int" value="101" />
+
+*inyeccion bean interno
+
+*inyeccion constructor bean
+
+*inyeccion set bean
+
+* autowiring
+* autowiring interfaz 
+* autowiring dao
+
+colecciones
+inheritance
+scope

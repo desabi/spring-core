@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- La clase Cuenta tiene los atributos banco, propietario y saldo -->
+	<!-- banco y saldo son datos simples -->
+	<!-- propietario es de tipo objeto -->
+	
+	<!-- para poder hacer el autowiring tipo byName, la propiedad y el id deben tener el mismo nombre -->
+	<!-- la propiedad en la clase cuenta se llama: propietario -->
+	<!-- en el beans.xml el id especificado es: propietario -->
+	
+	<bean id="propietario" class="com.abi.bean.Propietario">
+		<property name="nombre" value="AbiDS"></property>
+		<property name="telefono" value="7571251798"></property>
+	</bean>	
+	
+	<bean id="CuentaBean" class="com.abi.bean.Cuenta" autowire="byName">
+		
+		<property name="banco" value="HSBC"></property>
+		
+		<!-- Podemos omitir la siguiente linea debido al autowire="byName" -->
+		<!-- Spring enlazara automaticamente la propiedad de tipo objeto, propietario -->
+		<!-- Siempre y cuando la propiedad del bean cuenta y el id indicado en el tag bean -->
+		<!-- tengan el mismo nombre -->
+		
+		<!-- <property name="propietario" ref="propietario"></property> -->
+		
+		<property name="saldo" value="3456"></property>
+		
+	</bean>
+</beans>

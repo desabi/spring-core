@@ -1,0 +1,12 @@
+
+1. Crear el proyecto, tipo maven
+
+2. Agregar la dependencia spring-core al archivo pom.xml
+
+3. Crear el paqute com.abi.bean
+	- Crear la clase Propietario
+	- Crear la clase Cuenta
+
+4. Crear el archivo beans.xml en src/main/resources
+
+5. Crear el main

@@ -1,0 +1,20 @@
+
+1. Crear el proyecto de tipo maven
+
+2. Agregar la dependencia spring-core en pom.xml
+
+3. Crear el paquete com.abi.bean
+	- Crear clase Propietario
+	- Crear clase Cuenta
+	
+4. Crear beans.xml en src/main/resources
+
+5. Crear paquete com.abi.main
+	- Crear clase Main
+	
+
+Informacion de: https://www.javatpoint.com/autowiring-in-spring
+
+In case of byName autowiring mode, bean id and reference name must be same.
+It internally uses setter injection.
+

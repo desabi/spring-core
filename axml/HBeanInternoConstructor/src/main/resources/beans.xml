@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Este bean sera utilizado en la parte de abajo -->
+	<bean id="InquilinoBean" class="com.abi.bean.Inquilino">
+		<property name="nombre" value="Abi"></property>
+		<property name="telefono" value="7571251798"></property>
+	</bean>
+	
+	<bean id="HabitacionBean" class="com.abi.bean.Habitacion">
+		
+		<!-- Atributos simples inyectados via constructor -->
+		<constructor-arg name="numero" value="85"></constructor-arg>
+		<constructor-arg name="costo" value="199"></constructor-arg>
+		
+		<!-- Atributo de tipo objeto inyectado via constructotor -->
+		<!-- Se llama al bean que esta arriba, InquilinoBean -->
+		<constructor-arg name="inquilino" ref="InquilinoBean"></constructor-arg>
+		
+	</bean>
+</beans>

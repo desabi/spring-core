@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  -->	
+	<bean id="InquilinoBean" class="com.abi.bean.Inquilino">
+		<property name="nombre" value="AbiDS"></property>
+		<property name="telefono" value="7571251798"></property>
+	</bean>		
+	
+	<bean id="HabitacionBean" class="com.abi.bean.Habitacion" autowire="byType">
+		<property name="numero" value="420"></property>
+		<property name="costo" value="250"></property>
+		
+		<!-- Spring hace el enlace automaticamente de acuerdo al tipo de la propiedad -->
+		<!-- Habitacion tiene una propiedad de tipo Inquilino -->
+		<!-- Puede tener un nombre diferente la propiedad y el id  -->
+		<!-- Mientras sean del mismo tipo, Spring hara el enlace  -->
+		
+		<!-- <property name="inquilino" ref="InquilinoBean"></property> -->
+		
+	</bean>
+</beans>

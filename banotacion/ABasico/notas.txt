@@ -1,0 +1,32 @@
+
+Fuente:
+	2015_Learning-Spring-Application-Development, pagina 24
+
+1. Crear el proyecto de tipo maven
+
+2. Agregar la dependencia spring-context
+
+3 Crear paquete com.abi.service y sus clases
+	3.1 Se crea la interfaz, sin anotaciones
+	3.2 Crear la clase que implementa a la interfaz.
+		En el encabezado de la clase se coloca la anotacion
+ 	   - @Component que es mas general 
+ 	   - o @Service que es mas especializado
+
+4. Configurar el archivo beans.xml, se coloca en src/main/resources
+	
+	- A este archivo se le agrega
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	- O en la pestaña Namespaces, se activa la casilla context al crearlo
+	
+	<!-- Indicarle a Spring en donde debe buscar los beans que contengan anotaciones -->
+ 	<context:component-scan base-package="com.abi.service" />
+ 
+ 5. Crear el main
+ 
+ 	// La clase que implementa a la interfaz se llama: SaludoServiceImp
+	// esta clase tiene la anotacion @Service
+	// para crear su bean, se utiliza el mismo nombre de la clase, solo que con la primer letra en minuscula
+	// Nombre de la clase: SaludoServiceImp
+	// Obtener el bean con: saludoServiceImp	 

@@ -1,0 +1,25 @@
+Fuente: 2017_Pro.Spring.5
+Capitulo 3, pagina 55
+
+1. Crear proyecto de tipo maven
+
+2. En el pom.xml, agregar la dependencia spring-context
+
+3. Crear el paquete com.abi.dao
+	- Crear la interfaz EmpleadoDAO
+	- Crear la clase EmpleadoDAOImp y agregar la anotacion @Repository
+
+4. Crear el paquete com.abi.service
+	- crear la interfaz EmpleadoService
+	- crear la clase EmpleadoServiceImp y agrega la anotacion @Service
+
+5. Crear el paquete com.abi.config
+	- crear la clase AppConfig
+	- Agregar
+		@ComponentScan(basePackages = {"com.abi"})
+		@Configuration
+		
+6. Crear la clase Main en com.abi.main
+	- Llamar al archivo de configuracion para obtener los beans
+	ApplicationContext contexto = new AnnotationConfigApplicationContext(AppConfig.class);
+	

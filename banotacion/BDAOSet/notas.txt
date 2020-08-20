@@ -1,0 +1,35 @@
+
+Fuente: 2015_Learning-Spring-Application-Development, pagina 47
+
+1. Crear el proyecto tipo maven
+
+2. Agregar la dependencia spring-context al pom.xml
+
+3. Crear el paquete com.abi.dao
+	- Crear la interfaz
+	- En la clase que implementa la interfaz, agregar la anotacion @Repository
+	  en el encabezado de la clase, antes del nombre
+
+4 Crear el paquete service: la interfaz y la clase
+	- Crear la interfazs
+	- En la clase que implementa la interfaz, agregar la anotacion @Service, 
+	  en el encabezado de la clase, antes del nombre. 
+	 - Despues agregar la anotacion @Autorired en el metodo set
+	
+	EmpleadoDAO empleadoDAO;
+
+	/* inyeccion via set */
+	@Autowired
+	public void setEmpleadoDAO(EmpleadoDAO empleadoDAO) {
+		this.empleadoDAO = empleadoDAO;
+	}
+	
+5. Configurar archivo beans.xml en src/main/resources
+
+	- <context:component-scan base-package="com.abi" />
+	- dentro del paquete "com.abi" se encuentran los otros dos paquetes del proyecto
+	- com.abi.dao
+	- com.abi.service 
+
+6. Crear el main
+	

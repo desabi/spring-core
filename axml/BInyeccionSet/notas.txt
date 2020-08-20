@@ -1,0 +1,45 @@
+
+1. Crear el proyecto, tipo maven
+
+2. Configurar el archivo pom.xml, agregar la dependencia spring-context
+
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>5.1.5.RELEASE</version>
+  	</dependency>
+  </dependencies>
+  
+3. Crear el paquete com.abi.beans
+	- Crear la clase Persona (nombre, edad y estatura)
+	
+4. Crear el archivo beans.xml en src/main/resources
+
+	- Con lo siguiente, Spring se encargara de crea el nuevo bean 
+	  con los datos que se le indican 
+	
+	<!--Persona PersonaBean = new Persona  -->	
+	<bean id="PersonaBean" class="com.abi.bean.Persona">
+		<!-- persona.setNombre("abi") --> 
+		<property name="nombre" value="abi"></property>
+		<property name="edad" value="31"></property>
+		<property name="estatura" value="1.62"></property>
+	</bean>
+	
+	- id="PersonaBean" es el nombre con el que se obtendra el nuevo bean
+	- class="com.abi.bean.Persona" el nuevo bean se hara en base a esta clase
+	- <property name="nombre" value="abi"></property>
+	  Indica que la propiedad nombre tendra el valor de "abi"
+	- Lo mismo ocurre con la edad y la estatura.
+	
+	* Lo anterior seria el equivalente de:
+	Persona persona = new Persona();
+	
+	persona.setNombre("abi");
+	persona.setEdad(31);
+	persona.setEstatura(1.62);
+	
+5. Crear el main
+	
+	

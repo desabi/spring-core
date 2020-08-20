@@ -1,0 +1,39 @@
+
+1. Crear proyecto de tipo maven.
+
+2. Configurar el archivo pom.xml
+	- agregar la dependencia spring-context
+	
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>5.1.5.RELEASE</version>
+  	</dependency>
+  </dependencies>
+  
+ 3. Crear el paquete com.abi.bean
+ 	- Crear la clase Persona (nombre, edad y estatura)
+ 
+ 4. Crear el archivo beans.xml en src/main/resources
+ 	- Con lo siguiente, Spring se encargara de crea el nuevo bean 
+	  con los datos que se le indican 
+	  
+	  	<bean id="UsuarioBean" class="com.abi.bean.Usuario">
+			<property name="nombre" value="desabi"></property>
+		</bean>
+	  
+	  * El bean tiene dos datos, el nombre y la fecha
+	  * En Spring, en el archivo beans.xml solo se inyecta un dato, el nombre
+	  * La fecha es generada por el metodo imprimitDatos de la clase Usuario
+	  
+	  public void imprimirDatos() {
+		System.out.println("USUARIO");
+		System.out.println("Nombre: " + nombre);
+		fecha = new Date(); <- aqui es donde se genera la fecha, no es creada por Spring, sino por java
+		System.out.println("Fecha: " +  fecha );
+	  }	
+	
+ 5. Crear el paquete com.abi.main
+ 	- Crear el main
+ 	

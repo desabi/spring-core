@@ -1,0 +1,40 @@
+1. Crear proyecto de tipo maven.
+
+2. Configurar el archivo pom.xml
+	- agregar la dependencia spring-context
+	
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>5.1.5.RELEASE</version>
+  	</dependency>
+  </dependencies>
+  
+ 3. Crear el paquete com.abi.bean
+ 	- Crear la clase Direccion (ciudad, colonia)
+ 	- Crear la clase Individuo (nombre, edad, direccion)
+ 	
+ 4. Crear el archivo beans.xml en src/main/resources
+ 	
+ 	- Con lo siguiente, Spring se encargara de crea los nuevos beans, individuo y direccion 
+	  con los datos que se le indican 
+	  
+ 	<bean id="IndividuoBean" class="com.abi.bean.Individuo">
+ 		
+ 		<!-- Las propiedades simples se especifican de manera directa -->
+		<property name="nombre" value="Abi"></property>
+		<property name="edad" value="31"></property>
+		
+		<!-- Las propiedades de tipo objeto se especifican de la manera siguiente -->
+		<!-- La direccion es un objeto y a parte tiene datos simples -->
+		<property name="direccion">
+			<bean class="com.abi.bean.Direccion">
+				<property name="ciudad" value="Tlapa"></property>
+				<property name="colonia" value="Tepeyac"></property>
+			</bean>
+		</property>
+	</bean>
+
+5. Crear el main
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Con lo siguiente, Spring se encargara de crea los nuevos beans -->
+	<!-- taxi y conductor con los datos que se le indican -->
+	
+	<bean id="TaxiBean" class="com.abi.bean.Taxi">
+		
+		<!-- los atributos simples se inyectan via constructor-->
+		<constructor-arg name="sitio" value="Aviacion"></constructor-arg>
+		<constructor-arg name="numero" value="23"></constructor-arg>
+		
+		<!-- el atributo de tipo objeto se inyecta via constructor -->
+		<constructor-arg>
+			<bean class="com.abi.bean.Conductor">
+				<!-- Inyeccion via set -->
+				<property name="nombre" value="Abi"></property>
+				<property name="telefono" value="7571251798"></property>
+			</bean>
+		</constructor-arg>
+		
+	</bean>
+
+</beans>
